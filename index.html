@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wensheng LI — Developer</title>
+  <meta name="description" content="Full-stack developer crafting thoughtful digital experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">AC<span class="blink">_</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="./assets/files/Resume.pdf" download class="nav-cta">Resume ↓</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-label reveal">Available for opportunities</p>
+      <h1 class="hero-name reveal">
+        <span class="line">Wensheng</span>
+        <span class="line accent-italic">LI.</span>
+      </h1>
+      <p class="hero-tagline reveal">
+        Full-stack developer who believes<br />
+        good software is <em>invisible</em>.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">View my work</a>
+        <a href="#contact" class="btn btn-ghost">Let's talk</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-bg-grid"></div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo-wrap reveal">
+          <div class="about-photo">
+            <!-- Replace src with your actual photo -->
+            <img src="./assets/images/profile_img.JPG" alt="Wensheng LI" />
+          </div>
+          <div class="photo-tag">Based in Adelaide, AU 🇦🇺</div>
+        </div>
+        <div class="about-text reveal">
+          <p class="about-intro">
+            Hi — I'm Wensheng, a software developer with <strong>over 4 years of experience</strong> building web applications that prioritise clarity and craft.
+          </p>
+          <p>
+            I studied Master of Information Technology in Flinders University, South Australia and have since worked across early-stage startups and mid-size product companies. I'm most comfortable in the <strong>JavaScript / TypeScript</strong> ecosystem, though I've shipped production code in Python and Go too.
+          </p>
+          <p>
+            When I'm not writing code, I'm probably hiking, reading about programming language theory, or over-engineering my Neovim config.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h4>Frontend</h4>
+              <ul>
+                <li>React / Next.js</li>
+                <li>TypeScript</li>
+                <li>CSS / Tailwind</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4>Backend</h4>
+              <ul>
+                <li>Node.js / Express</li>
+                <li>Python</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4>Tooling</h4>
+              <ul>
+                <li>Git / GitHub</li>
+                <li>Docker</li>
+                <li>AWS (EC2, S3)</li>
+                <li>CI/CD</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Selected Work</h2>
+      </div>
+
+      <div class="projects-list">
+
+        <!-- Project 1 -->
+        <article class="project-card reveal" data-index="01">
+          <div class="project-meta">
+            <span class="project-tag">Web App</span>
+            <span class="project-tag">Full-Stack</span>
+            <span class="project-year">2024</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">TaskFlow</h3>
+            <p class="project-desc">
+              A Kanban-style project management tool built for small teams. Features real-time collaboration via WebSockets, drag-and-drop boards, and Slack notifications.
+            </p>
+            <div class="project-tech">
+              <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Socket.io</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/yourusername/taskflow" target="_blank" rel="noopener" class="project-link">GitHub ↗</a>
+            <a href="https://taskflow-demo.vercel.app" target="_blank" rel="noopener" class="project-link project-link-live">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal" data-index="02">
+          <div class="project-meta">
+            <span class="project-tag">CLI Tool</span>
+            <span class="project-tag">Open Source</span>
+            <span class="project-year">2024</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">gitpulse</h3>
+            <p class="project-desc">
+              A command-line tool that generates weekly activity digests from your GitHub repos, formatted as clean Markdown summaries. Used by 200+ developers.
+            </p>
+            <div class="project-tech">
+              <span>Python</span><span>GitHub API</span><span>Rich</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/yourusername/gitpulse" target="_blank" rel="noopener" class="project-link">GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal" data-index="03">
+          <div class="project-meta">
+            <span class="project-tag">API</span>
+            <span class="project-tag">Backend</span>
+            <span class="project-year">2023</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Pricewatch API</h3>
+            <p class="project-desc">
+              A REST API that tracks e-commerce price history and sends alerts when products drop below a target price. Handles 50k+ requests/day with Redis caching.
+            </p>
+            <div class="project-tech">
+              <span>FastAPI</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/yourusername/pricewatch" target="_blank" rel="noopener" class="project-link">GitHub ↗</a>
+            <a href="https://pricewatch-api.fly.dev/docs" target="_blank" rel="noopener" class="project-link project-link-live">API Docs ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-text reveal">
+          <p class="contact-intro">
+            I'm open to full-time roles, contract work, and interesting side projects. If something you're working on might be a good fit — say hi.
+          </p>
+          <a href="mailto:wensheng.li.mit@gmail.com" class="contact-email">wensheng.li.mit@gmail.com</a>
+          <div class="contact-socials">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">Twitter / X</a>
+          </div>
+        </div>
+        <div class="contact-resume reveal">
+          <div class="resume-card">
+            <div class="resume-icon">📄</div>
+            <h3>Resume</h3>
+            <p>Download my full CV as a PDF. Last updated May 2026.</p>
+            <a href="./assets/files/Resume.pdf" download class="btn btn-primary">Download Resume ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed & built by Wensheng LI — <span id="year"></span></p>
+      <p class="footer-sub">Made with HTML, CSS & vanilla JS. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
