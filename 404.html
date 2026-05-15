@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Alex Chen</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="404.css" />
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+
+  <!-- Back link -->
+  <nav class="back-nav">
+    <a href="index.html">← home</a>
+  </nav>
+
+  <!-- Auto-redirect progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- The big number -->
+  <div class="four-oh-four">404</div>
+
+  <!-- Message -->
+  <div class="content">
+    <p class="label">Page Not Found</p>
+    <h1>This page is still being built&nbsp;—<br/>or it never existed.</h1>
+    <p>
+      The link you followed might be broken, the page might be under construction,
+      or maybe you just discovered a dead end. Either way, you'll be taken home shortly.
+    </p>
+
+    <div class="countdown-wrap">
+      Redirecting in <span class="countdown-num" id="countdown">10</span> seconds
+    </div>
+
+    <div class="actions">
+      <a href="index.html" class="btn btn-primary">↩ Back to Home</a>
+      <a href="index.html#projects" class="btn btn-ghost">View Projects</a>
+    </div>
+  </div>
+
+  <!-- Terminal flavour -->
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+    </div>
+    <div><span class="line-prompt">~/portfolio</span> <span class="line-path">$ open <span id="badUrl"></span></span></div>
+    <div><span class="line-err">Error: 404 — document not found</span></div>
+    <div><span class="line-sug">Suggestion: try /index.html</span></div>
+    <div><span class="line-prompt">~/portfolio</span> $ <span class="cursor"></span></div>
+  </div>
+
+  <script>
+    // Show the bad URL in the terminal
+    document.getElementById('badUrl').textContent =
+      window.location.pathname || '/unknown';
+
+    // Countdown + redirect
+    const SECONDS = 10;
+    const countEl = document.getElementById('countdown');
+    const bar     = document.getElementById('progressBar');
+
+    // Animate progress bar from full → empty over SECONDS
+    bar.style.transition = `transform ${SECONDS}s linear`;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        bar.style.transform = 'scaleX(0)';
+      });
+    });
+
+    let remaining = SECONDS;
+    const timer = setInterval(() => {
+      remaining -= 1;
+      countEl.textContent = remaining;
+      if (remaining <= 0) {
+        clearInterval(timer);
+        window.location.href = 'index.html';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
