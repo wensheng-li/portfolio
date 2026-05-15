@@ -168,11 +168,23 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--accent);
-  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo img {
+  height: 100%;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.nav-logo .blink {
+  display: inline-block;
+  animation: blink 1.2s step-end infinite;
 }
 
 .blink {
